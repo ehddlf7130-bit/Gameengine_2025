@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 434299401}
   - component: {fileID: 434299400}
   - component: {fileID: 434299399}
+  - component: {fileID: 434299402}
   m_Layer: 0
   m_Name: player-idle-1
   m_TagString: Untagged
@@ -366,6 +367,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434299402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434299398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22f1697e9757934aa9170df203ac7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &519220635
 GameObject:
   m_ObjectHideFlags: 0
