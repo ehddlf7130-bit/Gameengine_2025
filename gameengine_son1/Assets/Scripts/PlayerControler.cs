@@ -39,6 +39,18 @@ public class PlayerController : MonoBehaviour
         movement += Vector3.right;
         transform.localScale = new Vector3(1, 1, 1);
     }
+
+    // 달리기 속도 계산
+    float currentMoveSpeed = moveSpeed;
+    if (Input.GetKey(KeyCode.LeftShift))
+    {
+        currentMoveSpeed = moveSpeed * 2f;
+        Debug.Log("달리기 모드 활성화!");
+    }
+
+    // 이동할 때 계산된 속도 사용
+    transform.Translate(movement * currentMoveSpeed * Time.deltaTime);
+
     
     // 실제 이동 적용
     if (movement != Vector3.zero)
