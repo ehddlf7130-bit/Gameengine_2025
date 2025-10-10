@@ -60,12 +60,22 @@ public class PlayerController : MonoBehaviour
     
     // 속도 계산: 이동 중이면 moveSpeed, 아니면 0
     float currentSpeed = movement != Vector3.zero ? moveSpeed : 0f;
+
+        // Animator에 속도 전달
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", currentSpeed);
+            Debug.Log("Current Speed: " + currentSpeed);
+        }
     
-    // Animator에 속도 전달
-    if (animator != null)
+        // 점프 입력 (한 번만 실행되어야 하므로 GetKeyDown!)
+    if (Input.GetKeyDown(KeyCode.Space))
     {
-        animator.SetFloat("Speed", currentSpeed);
-        Debug.Log("Current Speed: " + currentSpeed);
+        if (animator != null)
+        {
+            animator.SetTrigger("Player_Jump");
+            Debug.Log("점프!");
+        }
     }
 } 
 }
